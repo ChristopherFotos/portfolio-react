@@ -1,0 +1,193 @@
+$slide-in: 0.7s;
+$reveal: 0.5s;
+
+
+body {
+    background-color:  rgb(248, 242, 227);;
+    margin: 0;
+}
+
+.app {
+    justify-content: space-around;
+    display:flex;
+    height: 100vh;
+    padding: 0 28%;
+
+    &__left{ 
+        position: absolute;
+        left: 28%;
+        top:0;
+        height: 0px;
+        width: 1px;
+        z-index: 99;
+        background-color: rgb(248, 242, 227);
+        filter: blur(0.6px);
+        border-right: 8px solid #525252;
+
+    }
+    &__right{ 
+        height: 0px;
+        width: 1px;
+        position: absolute;
+        right: 28vw;
+        filter: blur(0.6px);
+        border-left: 8px solid #525252;
+        align-self: flex-end;
+        background-color: rgb(248, 242, 227);;
+        transition-duration: $slide-in
+
+    }
+
+    .main {
+        width: 50vw;
+        height: 70vh;
+        padding: 0 16px;
+        align-self: flex-end;
+
+        &__slogan {
+            font-family: 'Roboto Slab';
+            // font-weight: ;
+            color: #525252;
+            filter: blur(0.4px);
+            margin: 2px 0;
+        }
+
+        &__top {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__nav {
+            display: flex;
+            justify-content: space-between;
+
+            width: 66%;
+
+            &-item {
+                font-family: 'Microsoft Yi Baiti';
+                color: #525252;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                transition-duration: 0.3s;
+
+                &:hover{
+                    transform: scale(1.2);
+                    animation-duration: 0.3s;
+                    animation-fill-mode: forwards;
+                }
+
+
+            }
+
+            &-icon {
+                width: 20px;
+                filter: blur(0.4px);
+            }
+
+            &-cover {
+                position: absolute;
+                z-index: 2;
+                bottom: 250px;
+                width: 41.5%;
+                height: 100vh;
+                background-color: rgb(248, 242, 227);
+                transition-duration: $reveal;
+            }
+
+            &-text {
+                font-size: 20px;
+                margin: 3px;
+                filter: blur(0.3px);
+            }
+        }
+
+        &__circle-border {
+            width:185px;
+            height: 185px;
+            clip-path: circle();
+            background-color: #FF6C63;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        &__circle {
+            font-family: 'Mistral';
+            color: #FF6C63;
+            width:160px;
+            height: 160px;
+            display: flex;
+            font-size: 40px;
+            align-items: center;
+            justify-content: center;
+            filter: blur(0.4px);
+            clip-path: circle();
+            background-color: rgb(248, 242, 227);
+            transform-origin: center;
+        }
+    
+        &__name {
+            font-family: 'Alfa Slab One';
+            color:#525252;
+            font-size: 60px;
+            margin: 0;
+            filter: blur(0.4px)
+        }
+    }
+}
+
+
+
+
+@keyframes slidein {
+    from {
+        height: 0%
+    }
+
+    to {
+        height: 70%
+    }
+}
+
+@keyframes slidein-1 {
+    from {
+        height: 0px
+    }
+
+    to {
+        height: 57%;
+    }
+}
+
+@keyframes reveal {
+    from {
+        width: 39.5%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    from{
+        transform: translateY(0)
+    }
+
+    to {
+        transform-origin: translateY(8px);
+    }
+}
+
